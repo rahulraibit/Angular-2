@@ -1,0 +1,24 @@
+<div>
+    ............Simple Component Creation Example..........................
+    <app-simple-form></app-simple-form>
+  </div>
+    .........Simple Service Example..........................................
+    <br/>
+      <div>{{mail.message}}</div>
+    <br/>
+
+  .............Loop Example................................................
+  <ul>
+    <li *ngFor="let m of message.texts">{{m.text}}</li>
+  </ul>
+  <br/>
+  .............Value Pass example in angular 2 component...................
+  <br/>
+  <app-simple-form [message]="mail.message"></app-simple-form>
+  
+  <br/>
+  .........................outputEvent......................................
+  <div> 
+    <app-simple-form [message]="m.text" *ngFor="let m of message.texts" (update) = "onUpdate(m.index, $event.text)">
+    </app-simple-form> 
+  </div>
