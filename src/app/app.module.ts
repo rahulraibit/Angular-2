@@ -12,6 +12,8 @@ import { CustomerManagementService } from './customer-management.service'
 import { AppRoutingModule } from './app.routing.module';
 import { TestPageComponent } from './test-page/test-page.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
+import { StoreModule } from "@ngrx/store";
+import { customer_list } from "reducers/customer-reducer";
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.provideStore({customer_list}),
   ],
   providers: [
     { provide: 'mail', useClass: MailService },

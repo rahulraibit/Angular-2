@@ -1,5 +1,5 @@
 <div>
-  <div *ngFor="let item of customerList">
+  <div *ngFor="let item of customers | async">
     <span>{{item.Name}}</span>
     <span>{{item.Id}}</span>
     <span>{{item.Company}}</span>
