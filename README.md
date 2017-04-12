@@ -44,5 +44,5 @@ router-outlet - Acts as a placeholder that Angular dynamically fills based on th
 [Router-Outlet](https://angular.io/docs/ts/latest/api/router/index/RouterOutlet-directive.html)
 <br/>
 
-`Adding Css in the project` <br/>
+`Add bootstrap Css in the project` <br/>
 npm install ngx-bootstrap bootstrap --save 
