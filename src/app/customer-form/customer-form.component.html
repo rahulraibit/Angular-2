@@ -1,14 +1,35 @@
 <div>
   <h1> Customer Form </h1>
-  <div> <input #name type="text" placeholder="Name" /> </div>
-  <div> <input #id type="text" placeholder="Id" /> </div>
-  <div> <input #company type="text" placeholder="Company" /> </div>
-  <div> <input type="button" value="Save" (click)="onAddCustomer({Name:name.value, Id: id.value, Company : company.value })" />    </div>
+  <div class="customer-form">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-4">
+          <input #id type="text" class="form-control" placeholder="Id" />
+        </div>
+        <div class="col-md-4">
+          <input #name type="text" class="form-control" placeholder="Name" />
+        </div>
+        <div class="col-md-4">
+          <input #company type="text" class="form-control" placeholder="Company" />
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md-12">
+        <div class="btn-footer">
+          <input type="button" class="btn btn-link" (click)="goToNext()" value="Customer List" />
+          <input type="button" class="btn btn-primary" value="Save" (click)="onAddCustomer({Name:name.value, Id: id.value, Company : company.value })"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
   <br/>
-  <div *ngFor="let item of customer.customerList">
+  <!--<div *ngFor="let item of customer.customerList">
     <div><span>{{item.Name}}</span></div>
     <div><span>{{item.Id}}</span></div>
     <div><span>{{item.Company}}</span></div>
-  </div>
-  <input type="button" (click)="goToNext()" value="Go Back" />
+  </div>-->
+
 </div>

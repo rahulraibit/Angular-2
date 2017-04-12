@@ -4,11 +4,7 @@ import { Component, Inject } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  template: `
-  <router-outlet></router-outlet>
-  `,
-  styles: []
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'Hello World';

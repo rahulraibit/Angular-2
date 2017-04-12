@@ -1,0 +1,45 @@
+ .body-content {
+       display : flex;
+       flex-direction : column;
+       height : 100vh;
+     }
+     .content {
+       display : flex;
+       flex-grow: 1;
+       
+     }
+     .body-child {
+       padding : 10px;
+       flex: 1;
+     }
+     .sidebar {
+       background : grey;
+     }
+    .footer {
+      background: red;
+     }
+     .navigation {
+        list-style: none;
+        margin: 0; 
+        
+        background: deepskyblue;
+        
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;      
+        -webkit-flex-flow: row wrap;
+        justify-content: flex-end;
+  }
+
+  .navigation a {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: white;
+  } 
+
+  .navigation a:hover {
+    background: darken(deepskyblue, 2%);
+  }

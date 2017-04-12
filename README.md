@@ -46,3 +46,6 @@ Observable - object
 //Important
 router-outlet - Acts as a placeholder that Angular dynamically fills based on the current router state.
 https://angular.io/docs/ts/latest/api/router/index/RouterOutlet-directive.html
+
+npm install ngx-bootstrap bootstrap --save
+import the min.css 

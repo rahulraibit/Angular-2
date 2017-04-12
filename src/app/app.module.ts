@@ -14,6 +14,7 @@ import { TestPageComponent } from './test-page/test-page.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { StoreModule } from "@ngrx/store";
 import { customer_list } from "reducers/customer-reducer";
+import { AlertModule } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { customer_list } from "reducers/customer-reducer";
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    StoreModule.provideStore({customer_list}),
+    AlertModule.forRoot(),
+    StoreModule.provideStore({ customer_list }),
   ],
   providers: [
     { provide: 'mail', useClass: MailService },

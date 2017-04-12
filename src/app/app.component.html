@@ -1,3 +1,19 @@
-<h1>
-  {{title}}
-</h1>
+<div class="body-content">
+  <div class="header">
+    <ul class="navigation">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+  <div class="content">
+    <div class="sidebar">
+      sidebar
+    </div>
+    <div class="body-child">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="footer">footer</div>
+</div>

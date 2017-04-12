@@ -1,7 +1,22 @@
 <div>
-  <div *ngFor="let item of customers | async">
-    <span>{{item.Name}}</span>
-    <span>{{item.Id}}</span>
-    <span>{{item.Company}}</span>
+  <h1>Customer List</h1>
+  <div class='customer-list'>
+    <div class="t-header-container">
+      <div class="t-header-item">Id</div>
+      <div class="t-header-item">Name</div>
+      <div class="t-header-item">Company</div>
+      <div class="t-header-item">Edit Action</div>
+      <div class="t-header-item">Delete Action</div>
+    </div>
+    <div class="t-row" *ngFor="let item of customers | async">
+      <div class="t-td">{{item.Id}}</div>
+      <div class="t-td">{{item.Name}}</div>
+      <div class="t-td">{{item.Company}}</div>
+      <div class="t-td"><input type="button" class="btn btn-default" value="Edit" /></div>
+      <div class="t-td"><input type="button" class="btn btn-default" value="Delete" /></div>
+    </div>
+  </div>
+  <div>
+    <div class="btn-footer"><input type="button" class="btn btn-link" (click)="goToNext()" value="Add Customer" /></div>
   </div>
 </div>

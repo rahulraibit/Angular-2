@@ -6,7 +6,21 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-customer-form',
   templateUrl: './customer-form.component.html',
-  styles: [],
+  styles: [`
+  .customer-form {
+    border : 1px solid grey;
+    padding : 10px 0;
+  }
+  input[type="button"] {
+    margin-left : 10px;
+  }
+  .btn-footer {
+    display : flex;
+    background: #fff2e6;
+    padding : 0 10px;
+    justify-content: flex-end;
+  }
+  `],
 })
 export class CustomerFormComponent implements OnInit {
   parentRouter;
