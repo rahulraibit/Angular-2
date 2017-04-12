@@ -28,24 +28,23 @@ Before running the tests make sure you are serving the app via `ng serve`.
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 
+## Useful Commands
 
-Experiment Commands
-
-npm install -g @angular/cli (install the command line for angular)
-ng new projectName (generate the sample project and and install the dependencies)
-ng serve (run the service)
-ng g c component-name -il -is (generate component name with inline template and inline style)
-ng g s nameOfService (generate service, this generate the new service but do not include in the provider, explicitly need to be added in the app module.) 
+npm install -g @angular/cli (install the command line for angular) <br/>
+ng new projectName (generate the sample project and and install the dependencies)<br/>
+ng serve (run the service)<br/>
+ng g c component-name -il -is (generate component name with inline template and inline style)<br/>
+ng g s nameOfService (generate service, this generate the new service but do not include in the provider, explicitly need to be added in the app module.) <br/>
 
 /// State Management 
 
-1. RxJs/ngrx/store
+## Used RxJs/ngrx/store
 
-Observable - object
 
-//Important
-router-outlet - Acts as a placeholder that Angular dynamically fills based on the current router state.
-https://angular.io/docs/ts/latest/api/router/index/RouterOutlet-directive.html
+## Notes
+router-outlet - Acts as a placeholder that Angular dynamically fills based on the current router state. <br/>
+[Router-Outlet](https://angular.io/docs/ts/latest/api/router/index/RouterOutlet-directive.html)
+<br/>
 
-npm install ngx-bootstrap bootstrap --save
-import the min.css 
+`Adding Css in the project`
+npm install ngx-bootstrap bootstrap --save 
