@@ -36,8 +36,6 @@ ng serve (run the service)<br/>
 ng g c component-name -il -is (generate component name with inline template and inline style)<br/>
 ng g s nameOfService (generate service, this generate the new service but do not include in the provider, explicitly need to be added in the app module.) <br/>
 
-/// State Management 
-
 ## Used RxJs/ngrx/store
 
 
@@ -46,5 +44,5 @@ router-outlet - Acts as a placeholder that Angular dynamically fills based on th
 [Router-Outlet](https://angular.io/docs/ts/latest/api/router/index/RouterOutlet-directive.html)
 <br/>
 
-`Adding Css in the project`
+`Adding Css in the project` <br/>
 npm install ngx-bootstrap bootstrap --save 
