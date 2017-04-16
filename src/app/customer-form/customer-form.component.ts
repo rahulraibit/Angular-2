@@ -22,6 +22,12 @@ import { Observable } from "rxjs/Observable";
     padding : 0 10px;
     justify-content: flex-end;
   }
+  input.ng-invalid.ng-dirty {
+    border : 3px solid red;
+  }
+  input:focus.ng-valid.ng-dirty {
+    border : 3px solid green;
+  }
   `],
 })
 export class CustomerFormComponent implements OnInit {
@@ -41,6 +47,7 @@ export class CustomerFormComponent implements OnInit {
     this.parentRouter = r;
     this.customers = store.select('customer_list');
   }
+  //Need to use the service for better code split and logic sepration.
   onAddCustomer(value) {
     console.log(value);
     //this.customer.addCustomer(value);

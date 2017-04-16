@@ -1,35 +1,37 @@
 <div>
   <h1> Customer Form </h1>
   <div class="customer-form">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="col-md-4">
-          <input type="text" class="form-control" placeholder="Id" [(ngModel)]="id" />
-        </div>
-        <div class="col-md-4">
-          <input type="text" class="form-control" placeholder="Name" [(ngModel)]="name" />
-        </div>
-        <div class="col-md-4">
-          <input type="text" class="form-control" placeholder="Company" [(ngModel)]="company" />
-        </div>
-      </div>
-    </div>
-    <br />
-    <div class="row">
-      <div class="col-md-12">
-        <div class="btn-footer">
-          <input type="button" class="btn btn-link" (click)="goToNext()" value="Customer List" />
-          <input type="button" class="btn btn-primary" value="Save" (click)="onAddCustomer({Name:name, Id: id, Company : company })"
-          />
+    <form #formRef="ngForm">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="col-md-4">
+            <div><input type="number" name="id" required #idRef="ngModel" class="form-control" placeholder="Id" [(ngModel)]="id"
+              /></div>
+            <div *ngIf="!idRef.untouched&&idRef.errors?.required">This field is required</div>
+            <div *ngIf="!idRef.untouched&&idRef.errors?.number">Only number is allowed</div>
+          </div>
+          <div class="col-md-4">
+            <input type="text" name="name" required #nameRef="ngModel" class="form-control" placeholder="Name" [(ngModel)]="name" />
+            <div *ngIf="!nameRef.untouched&&nameRef.errors?.required">This field is required</div>
+          </div>
+          <div class="col-md-4">
+            <input type="text" name="company" required #companyRef="ngModel" class="form-control" placeholder="Company" [(ngModel)]="company"
+            />
+            <div *ngIf="!companyRef.untouched&&companyRef.errors?.required">This field is required</div>
+          </div>
         </div>
       </div>
-    </div>
+      <br />
+      <div class="row">
+        <div class="col-md-12">
+          <div class="btn-footer">
+            <input type="button" class="btn btn-link" (click)="goToNext()" value="Customer List" />
+            <input [disabled]="!formRef.valid" type="button" class="btn btn-primary" value="Save" (click)="onAddCustomer({Name:name, Id: id, Company : company })"
+            />
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
   <br/>
-  <!--<div *ngFor="let item of customer.customerList">
-    <div><span>{{item.Name}}</span></div>
-    <div><span>{{item.Id}}</span></div>
-    <div><span>{{item.Company}}</span></div>
-  </div>-->
-
 </div>
