@@ -4,13 +4,13 @@
     <div class="row">
       <div class="col-md-12">
         <div class="col-md-4">
-          <input #id type="text" class="form-control" placeholder="Id" />
+          <input type="text" class="form-control" placeholder="Id" [(ngModel)]="id" />
         </div>
         <div class="col-md-4">
-          <input #name type="text" class="form-control" placeholder="Name" />
+          <input type="text" class="form-control" placeholder="Name" [(ngModel)]="name" />
         </div>
         <div class="col-md-4">
-          <input #company type="text" class="form-control" placeholder="Company" />
+          <input type="text" class="form-control" placeholder="Company" [(ngModel)]="company" />
         </div>
       </div>
     </div>
@@ -19,7 +19,7 @@
       <div class="col-md-12">
         <div class="btn-footer">
           <input type="button" class="btn btn-link" (click)="goToNext()" value="Customer List" />
-          <input type="button" class="btn btn-primary" value="Save" (click)="onAddCustomer({Name:name.value, Id: id.value, Company : company.value })"
+          <input type="button" class="btn btn-primary" value="Save" (click)="onAddCustomer({Name:name, Id: id, Company : company })"
           />
         </div>
       </div>

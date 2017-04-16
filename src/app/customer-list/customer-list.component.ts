@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject, Output, EventEmitter, Injectable } from '@angular/core';
 import { Store } from '@ngrx/store'
 import { Router } from "@angular/router";
+import { CUSTOMER_DELETE } from "reducers/customer-reducer";
 
 
 @Component({
@@ -59,6 +60,15 @@ export class CustomerListComponent implements OnInit {
   }
   ngOnInit() {
   }
+  editCustomer(customerId) {
+    console.log(customerId);
+    this.parentRouter.navigate(['/customer'], { queryParams: { cid: customerId } });
+  }
+  deleteCustomer(customerId) {
+    console.log(customerId);
+    this.store.dispatch({ type: CUSTOMER_DELETE, payload: { Id: customerId } })
+  }
+
   goToNext() {
     console.log(this.parentRouter.navigate(['/customer']));
   }

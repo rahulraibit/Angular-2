@@ -1,7 +1,9 @@
 import { Component, OnInit, Output, EventEmitter, Inject } from '@angular/core';
 import { Store } from "@ngrx/store";
-import { customer_list, CUSTOMER_ADD } from "reducers/customer-reducer";
-import { Router } from '@angular/router';
+import { customer_list, CUSTOMER_ADD, CUSTOMER_EDIT } from "reducers/customer-reducer";
+import { Router, ActivatedRoute } from '@angular/router';
+import { Subscription } from "rxjs/Subscription";
+import { Observable } from "rxjs/Observable";
 
 @Component({
   selector: 'app-customer-form',
@@ -23,21 +25,54 @@ import { Router } from '@angular/router';
   `],
 })
 export class CustomerFormComponent implements OnInit {
+  company: any;
+  id: any;
+  name: any;
+  cid: number;
+  sub: Subscription;
+  cidDetails: any;
   parentRouter;
-  customers;
-  constructor( @Inject('customer') private customer, private store: Store<any>, private r : Router) { 
+  customers: any;
+  constructor( @Inject('customer') private customer,
+    private store: Store<any>,
+    private r: Router,
+    private route: ActivatedRoute
+  ) {
     this.parentRouter = r;
     this.customers = store.select('customer_list');
-    console.log(this.customers);
   }
   onAddCustomer(value) {
     console.log(value);
-    this.customer.addCustomer(value);
-    this.store.dispatch({ type: CUSTOMER_ADD, payload: value });
+    //this.customer.addCustomer(value);
+    if (!this.cid) {
+      this.store.dispatch({ type: CUSTOMER_ADD, payload: value });
+    } else {
+      this.store.dispatch({ type: CUSTOMER_EDIT, payload: value });
+    }
+    alert('Data has been saved successfully');
   }
   ngOnInit() {
+    this.sub = this.route
+      .queryParams
+      .subscribe(params => {
+        // Defaults to 0 if no query param provided.
+        this.cid = params['cid'] || 0;
+        if (this.cid) {
+          this.customers
+            .subscribe(data => data.filter(f => {
+              if (f.Id == this.cid) {
+                this.id = f.Id;
+                this.name = f.Name;
+                this.company = f.Company;
+              }
+            }));
+        }
+      });
   }
   goToNext() {
     console.log(this.parentRouter.navigate(['/customer-list']));
+  }
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 }

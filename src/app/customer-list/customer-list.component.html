@@ -12,8 +12,8 @@
       <div class="t-td">{{item.Id}}</div>
       <div class="t-td">{{item.Name}}</div>
       <div class="t-td">{{item.Company}}</div>
-      <div class="t-td"><input type="button" class="btn btn-default" value="Edit" /></div>
-      <div class="t-td"><input type="button" class="btn btn-default" value="Delete" /></div>
+      <div class="t-td"><input type="button" class="btn btn-default" (click)="editCustomer(item.Id)" value="Edit" /></div>
+      <div class="t-td"><input type="button" class="btn btn-default" (click)="deleteCustomer(item.Id)" value="Delete" /></div>
     </div>
   </div>
   <div>
